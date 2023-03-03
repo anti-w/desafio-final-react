@@ -31,15 +31,26 @@
 
 ### JSX
 
-- 
+- [O que é JSX](https://pt-br.reactjs.org/docs/introducing-jsx.html)
+- [O que é Node](https://www.opus-software.com.br/node-js/)
+- [O que é NPM](https://rockcontent.com/br/blog/npm/)
+- [Quais as diferenças entre JS e JSX](https://horadecodar.com.br/2022/05/01/qual-a-diferenca-de-js-e-jsx-em-reactjs/)
+- [Criando elementos com JSX](https://www.w3schools.com/react/react_jsx.asp)
+- [Renderizando elementos com JSX](https://pt-br.reactjs.org/docs/rendering-elements.html)
 
 ### React
 
-- 
-
-### Hooks e Estados
-
-- 
+- [Instalando o React](https://pt-br.reactjs.org/docs/create-a-new-react-app.html)
+- [Instalando bibliotecas](https://classic.yarnpkg.com/lang/en/docs/getting-started/)
+- [Criando componentes](https://pt-br.reactjs.org/docs/components-and-props.html#function-and-class-components)
+- [Recebendo propriedades](https://pt-br.reactjs.org/docs/components-and-props.html#rendering-a-component)
+- [Utilizando CSS](https://www.w3schools.com/react/react_css.asp)
+- [Integrando com APIs](https://github.com/axios/axios)
+- [O que é um hook](https://pt-br.reactjs.org/docs/hooks-overview.html)
+- [useState](https://pt-br.reactjs.org/docs/hooks-state.html)
+- [useEffect](https://pt-br.reactjs.org/docs/hooks-effect.html)
+- [useRef](https://pt-br.reactjs.org/docs/hooks-reference.html#useref)
+- [Hooks personalizados](https://pt-br.reactjs.org/docs/hooks-custom.html)
 
 ### Exercícios extras
 
