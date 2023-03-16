@@ -26,11 +26,11 @@ const AnimeCard = ({
         >
           <ArrowBendUpRight size={24} weight="bold" />
         </a>
-        <span className="flex items-center gap-2">
+        <span className="flex items-center gap-2 text-yellow-500 font-bold">
           <Star size={26} weight="bold" />
           {score}
         </span>
-        <span>
+        <span className="text-red-500">
           {episodes === 1 ? `${episodes} episode` : `${episodes} episodes`}{" "}
         </span>
         {genres.map((genre, i) => (
