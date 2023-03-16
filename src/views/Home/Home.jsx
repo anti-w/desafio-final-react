@@ -1,14 +1,13 @@
 import { Box } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
-import { ResponsiveAppBar, ToggleDarkModeButton } from "../../components";
+import { Header } from "../../components";
 
 const Home = () => {
   const theme = useTheme();
 
   return (
     <div>
-      <ResponsiveAppBar />
-      <ToggleDarkModeButton />
+      <Header />
     </div>
   );
 };

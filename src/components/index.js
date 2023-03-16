@@ -6,4 +6,3 @@ export { CharactersList } from "./CharactersList";
 export { ContainerWithBackground } from "./ContainerWithBackground";
 export { GridFourCols } from "./GridFourCols";
 export { ToggleDarkModeButton } from "./ToggleDarkModeButton";
-export { ResponsiveAppBar } from "./ResponsiveAppBar";
