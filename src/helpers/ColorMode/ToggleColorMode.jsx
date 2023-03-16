@@ -1,6 +1,7 @@
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useMemo, useState } from "react";
 import { ColorModeContext } from "../../contexts";
+import { getDesignTokens } from "./getDesignTokens";
 
 const ToggleColorMode = ({ children }) => {
   const [mode, setMode] = useState("light");
@@ -14,15 +15,7 @@ const ToggleColorMode = ({ children }) => {
     []
   );
 
-  const theme = useMemo(
-    () =>
-      createTheme({
-        palette: {
-          mode,
-        },
-      }),
-    [mode]
-  );
+  const theme = useMemo(() => createTheme(getDesignTokens(mode)), [mode]);
 
   return (
     <ColorModeContext.Provider value={colorMode}>
