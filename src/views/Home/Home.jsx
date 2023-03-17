@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Container } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { Header } from "../../components";
 
@@ -6,9 +6,9 @@ const Home = () => {
   const theme = useTheme();
 
   return (
-    <div>
+    <Container maxWidth={false}>
       <Header />
-    </div>
+    </Container>
   );
 };
 
