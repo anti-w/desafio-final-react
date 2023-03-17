@@ -1,4 +1,4 @@
-import { useTheme } from "@emotion/react";
+import { useTheme } from "@mui/material";
 import Grid from "@mui/material/Grid";
 
 import { Box } from "@mui/system";
@@ -16,18 +16,13 @@ const Header = ({ setAnimes }) => {
     setAnimes(name);
   };
   return (
-    // <Box
-    //   component="header"
-    //   sx={{
-    //     display: "flex",
-    //     justifyContent: "space-between",
-    //     alignItems: "center",
-    //     backgroundColor: theme.palette.primary.main,
-    //     borderRadius: "12px",
-    //     padding: "10px",
-    //   }}
-    // >
-    <Grid container spacing={2}>
+    <Grid
+      container
+      justifyContent="space-between"
+      alignItems="center"
+      bgcolor={theme.palette.primary.main}
+      borderRadius="10px"
+    >
       <Grid xs={4} item>
         <img src={logo} style={{ objectFit: "contain", width: "45%" }} />
       </Grid>
@@ -38,7 +33,6 @@ const Header = ({ setAnimes }) => {
         <ToggleDarkModeButton />
       </Grid>
     </Grid>
-    // </Box>
   );
 };
 
