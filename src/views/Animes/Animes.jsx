@@ -4,7 +4,7 @@ import {
   ContainerWithBackground,
   GridFourCols,
   AnimesList,
-  Header,
+  CustomAppBar,
 } from "../../components";
 
 import { useFetch } from "../../hooks/useFetch";
@@ -26,7 +26,7 @@ const Animes = () => {
   return (
     <>
       <ContainerWithBackground>
-        <Header setAnimes={setAnimesSearch} />
+        <CustomAppBar />
         <GridFourCols>
           <AnimesList animes={fetchedData} isLoading={isLoading} />
         </GridFourCols>
