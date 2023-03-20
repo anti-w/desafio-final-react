@@ -1,4 +1,8 @@
-import { createTheme, ThemeProvider } from "@mui/material/styles";
+import {
+  createTheme,
+  responsiveFontSizes,
+  ThemeProvider,
+} from "@mui/material/styles";
 import { useMemo, useState } from "react";
 import { ColorModeContext } from "../../contexts";
 import { getDesignTokens } from "./getDesignTokens";
@@ -15,7 +19,8 @@ const ToggleColorMode = ({ children }) => {
     []
   );
 
-  const theme = useMemo(() => createTheme(getDesignTokens(mode)), [mode]);
+  let theme = useMemo(() => createTheme(getDesignTokens(mode)), [mode]);
+  theme = responsiveFontSizes(theme);
 
   return (
     <ColorModeContext.Provider value={colorMode}>

@@ -1,8 +1,18 @@
-import { Box, Container, Grid, useTheme } from "@mui/material";
+import {
+  Avatar,
+  Box,
+  Container,
+  Grid,
+  Typography,
+  useTheme,
+} from "@mui/material";
 import Image from "mui-image";
 import { Footer, CustomAppBar, FeedbackDialog } from "../../components";
 
 import dbz from "../../images/dbz.png";
+import deathnote from "../../images/death-note.png";
+import bleachskull from "../../images/bleach-skull.png";
+import noragamilogo from "../../images/noragami-logo.png";
 
 const Home = () => {
   const theme = useTheme();
@@ -14,39 +24,76 @@ const Home = () => {
         display: "flex",
         flexDirection: "column",
         height: "100vh",
+        gap: "2rem",
         justifyContent: "space-between",
-        gap: "42px",
-        overflow: "hidden",
       }}
     >
       <CustomAppBar />
-      <Grid container columnGap={10}>
-        <Grid
-          item
-          xs={6}
-          pl={10}
-          bgcolor={theme.palette.primary.main}
-          borderRadius="1rem"
+      <Box display="flex" height="100%" flexDirection="column">
+        <Typography variant="h4" fontWeight="bold" textAlign="center">
+          Projeto: Consumindo API Jinkan (MyAnimeList)
+        </Typography>
+        <Box
+          display="flex"
+          alignItems="start"
+          justifyContent="flex-start"
+          py={4}
+          pl={1}
+          border="1px solid gray"
+          my={3}
         >
-          <Image src={dbz} fit="scale-down" height="72vh" width="30vw" />
-        </Grid>
-        <Grid container xs={5} bgcolor="red">
-          <Grid item xs={12} sx={{ placeSelf: "end" }}>
-            <h1>teste</h1>
-          </Grid>
-          <Grid container>
-            <Grid item xs={4} sx={{}}>
-              <h1>teste1</h1>
-            </Grid>
-            <Grid item xs={4} sx={{}}>
-              <h1>teste1</h1>
-            </Grid>
-            <Grid item xs={4} sx={{}}>
-              <h1>teste1</h1>
-            </Grid>
-          </Grid>
-        </Grid>
-      </Grid>
+          <Avatar
+            src={bleachskull}
+            sx={{ width: 100, height: 100 }}
+            variant="rounded"
+          />
+
+          <Box display="flex" width="100%">
+            <Typography variant="h6">Animes</Typography>
+            <Typography variant="h6">Animes</Typography>
+          </Box>
+        </Box>
+        <Box
+          display="flex"
+          alignItems="start"
+          justifyContent="flex-start"
+          py={4}
+          pl={1}
+          my={3}
+          border="1px solid gray"
+        >
+          <Avatar
+            src={deathnote}
+            sx={{ width: 88, height: 88 }}
+            variant="rounded"
+          />
+
+          <Box display="flex" width="100%">
+            <Typography variant="h6">Animes</Typography>
+            <Typography variant="h6">Animes</Typography>
+          </Box>
+        </Box>
+        <Box
+          display="flex"
+          alignItems="start"
+          justifyContent="flex-start"
+          py={4}
+          pl={1}
+          my={3}
+          border="1px solid gray"
+        >
+          <Avatar
+            src={noragamilogo}
+            sx={{ width: 100, height: 100 }}
+            variant="rounded"
+          />
+
+          <Box display="flex" width="100%">
+            <Typography variant="h6">Animes</Typography>
+            <Typography variant="h6">Animes</Typography>
+          </Box>
+        </Box>
+      </Box>
 
       <FeedbackDialog />
 
