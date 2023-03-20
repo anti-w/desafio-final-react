@@ -1,14 +1,10 @@
 import { useParams } from "react-router-dom";
 
-import {
-  CharactersList,
-  ContainerWithBackground,
-  GridFourCols,
-} from "../../components";
+import { CharactersList } from "../../components";
 
 import { useFetch } from "../../hooks/useFetch";
 
-import "../../index.css";
+import { FlexThreeElements } from "../../layouts";
 
 const AnimeCharacters = () => {
   let { id } = useParams();
@@ -16,13 +12,9 @@ const AnimeCharacters = () => {
   const { fetchedData, isLoading } = useFetch(`anime/${id}/characters`);
 
   return (
-    <>
-      <ContainerWithBackground>
-        <GridFourCols>
-          <CharactersList characters={fetchedData} isLoading={isLoading} />
-        </GridFourCols>
-      </ContainerWithBackground>
-    </>
+    <FlexThreeElements>
+      <CharactersList characters={fetchedData} isLoading={isLoading} />
+    </FlexThreeElements>
   );
 };
 

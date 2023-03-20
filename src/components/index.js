@@ -2,8 +2,6 @@ export { AnimeCard } from "./AnimeCard";
 export { AnimesList } from "./AnimesList";
 export { CharacterCard } from "./CharacterCard";
 export { CharactersList } from "./CharactersList";
-export { ContainerWithBackground } from "./ContainerWithBackground";
-export { GridFourCols } from "./GridFourCols";
 export { ToggleDarkModeButton } from "./ToggleDarkModeButton";
 export { Footer } from "./Footer";
 export { CustomAppBar } from "./CustomAppBar";
