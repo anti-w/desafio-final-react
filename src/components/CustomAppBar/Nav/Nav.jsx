@@ -12,8 +12,8 @@ const pages = [
     label: "Mangás",
   },
   {
-    path: "/recomendations",
-    label: "Recomendações",
+    path: "/season",
+    label: "Essa temporada",
   },
 ];
 
@@ -35,7 +35,7 @@ const Nav = ({ onMobile = false, handleCloseNavMenu = () => {} }) => {
   if (onMobile) {
     return pages.map(({ path, label }, i) => (
       <MenuItem onClick={handleCloseNavMenu} key={i}>
-        {<NavLinks path={path} label={label} />}
+        <NavLinks path={path} label={label} />
       </MenuItem>
     ));
   }
