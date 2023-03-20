@@ -12,7 +12,8 @@ import { Footer, CustomAppBar, FeedbackDialog } from "../../components";
 import dbz from "../../images/dbz.png";
 import deathnote from "../../images/death-note.png";
 import bleachskull from "../../images/bleach-skull.png";
-import noragamilogo from "../../images/noragami-logo.png";
+import onepiece from "../../images/one-piece-logo.png";
+import { useEffect } from "react";
 
 const Home = () => {
   const theme = useTheme();
@@ -30,67 +31,103 @@ const Home = () => {
     >
       <CustomAppBar />
       <Box display="flex" height="100%" flexDirection="column">
-        <Typography variant="h4" fontWeight="bold" textAlign="center">
+        <Typography variant="h4" fontWeight="bold" textAlign="center" mb={3}>
           Projeto: Consumindo API Jinkan (MyAnimeList)
         </Typography>
         <Box
           display="flex"
-          alignItems="start"
-          justifyContent="flex-start"
-          py={4}
-          pl={1}
-          border="1px solid gray"
+          bgcolor={theme.palette.primary.main}
+          borderRadius={2}
+          p={2}
           my={3}
+          gap={1}
+          sx={{ opacity: 0.7, ":hover": { opacity: 1 } }}
         >
           <Avatar
             src={bleachskull}
-            sx={{ width: 100, height: 100 }}
+            sx={{ width: 130, height: 130 }}
             variant="rounded"
           />
 
-          <Box display="flex" width="100%">
-            <Typography variant="h6">Animes</Typography>
-            <Typography variant="h6">Animes</Typography>
+          <Box
+            display="flex"
+            flexDirection="column"
+            textAlign="center"
+            p={1}
+            gap={1}
+          >
+            <Typography variant="h5" fontWeight="bold">
+              Animes
+            </Typography>
+            <Typography variant="h6">
+              Veja a popularidade, gêneros, notas da comunidade e personagens.
+            </Typography>
           </Box>
         </Box>
         <Box
           display="flex"
           alignItems="start"
           justifyContent="flex-start"
-          py={4}
-          pl={1}
+          borderRadius={2}
+          p={2}
           my={3}
-          border="1px solid gray"
+          gap={1}
+          bgcolor={theme.palette.primary.main}
+          sx={{ opacity: 0.7, ":hover": { opacity: 1 } }}
         >
           <Avatar
             src={deathnote}
-            sx={{ width: 88, height: 88 }}
+            sx={{ width: 130, height: 130 }}
             variant="rounded"
           />
 
-          <Box display="flex" width="100%">
-            <Typography variant="h6">Animes</Typography>
-            <Typography variant="h6">Animes</Typography>
+          <Box
+            display="flex"
+            flexDirection="column"
+            textAlign="center"
+            p={1}
+            gap={1}
+          >
+            <Typography variant="h5" fontWeight="bold">
+              Mangás
+            </Typography>
+            <Typography variant="h6">
+              Saiba sobre seu mangá preferido, acompanhe a edição, popularidade
+              e etc.
+            </Typography>
           </Box>
         </Box>
         <Box
           display="flex"
           alignItems="start"
           justifyContent="flex-start"
-          py={4}
-          pl={1}
+          p={2}
           my={3}
-          border="1px solid gray"
+          gap={1}
+          borderRadius={2}
+          bgcolor={theme.palette.primary.main}
+          sx={{ opacity: 0.7, ":hover": { opacity: 1 } }}
         >
           <Avatar
-            src={noragamilogo}
-            sx={{ width: 100, height: 100 }}
+            src={onepiece}
+            sx={{ width: 130, height: 130 }}
             variant="rounded"
           />
 
-          <Box display="flex" width="100%">
-            <Typography variant="h6">Animes</Typography>
-            <Typography variant="h6">Animes</Typography>
+          <Box
+            display="flex"
+            flexDirection="column"
+            textAlign="center"
+            p={1}
+            gap={1}
+          >
+            <Typography variant="h5" fontWeight="bold">
+              Recomendações
+            </Typography>
+            <Typography variant="h6">
+              Veja o que a comunidade está falando sore os animes e descubra
+              algo novo para acompanhar.
+            </Typography>
           </Box>
         </Box>
       </Box>
