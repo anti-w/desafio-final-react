@@ -1,15 +1,17 @@
-import Button from "@mui/material/Button";
-import TextField from "@mui/material/TextField";
-import Dialog from "@mui/material/Dialog";
-import DialogActions from "@mui/material/DialogActions";
-import DialogContent from "@mui/material/DialogContent";
-import DialogContentText from "@mui/material/DialogContentText";
-import DialogTitle from "@mui/material/DialogTitle";
 import { useState } from "react";
-import { Avatar, Box, Tooltip, useTheme } from "@mui/material";
+
+import {
+  Box,
+  Tooltip,
+  Dialog,
+  DialogContent,
+  DialogTitle,
+  useTheme,
+} from "@mui/material";
 
 import Image from "mui-image";
 import uzumaki from "../../images/uzumaki.png";
+import uchiha from "../../images/uchiha.png";
 import { Form } from "./Form";
 
 const FeedbackDialog = () => {
@@ -53,14 +55,12 @@ const FeedbackDialog = () => {
         </Box>
       </Tooltip>
       <Dialog open={open} onClose={handleClose}>
-        <DialogTitle>Subscribe</DialogTitle>
-        <DialogContent>
+        <DialogTitle textAlign="center" fontWeight="bold">
+          Nos ajude a melhorar
+        </DialogTitle>
+        <DialogContent sx={{ backgroundImage: uchiha }}>
           <Form />
         </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose}>Cancel</Button>
-          <Button onClick={handleClose}>Subscribe</Button>
-        </DialogActions>
       </Dialog>
     </div>
   );

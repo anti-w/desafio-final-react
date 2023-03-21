@@ -1,13 +1,23 @@
-import { Rating, TextField } from "@mui/material";
+import { InputLabel, Rating, TextField } from "@mui/material";
+
 import { Controller, useForm } from "react-hook-form";
 
+import { yupResolver } from "@hookform/resolvers/yup";
+import { schema } from "./schema";
+
 const Form = () => {
-  const { handleSubmit, control } = useForm({
+  const {
+    handleSubmit,
+    control,
+    formState: { errors },
+  } = useForm({
     defaultValues: {
       email: "",
       nickname: "",
       note: 0,
+      feedback: "",
     },
+    resolver: yupResolver(schema),
   });
 
   const onSubmit = (data) => console.log(data);
@@ -15,37 +25,46 @@ const Form = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <Controller
-        name="email"
-        control={control}
-        rules={{ required: true }}
-        render={({ field }) => <TextField {...field} helperText="E-mail" />}
-      />
-      <Controller
         name="nickname"
         control={control}
-        rules={{ required: true }}
         render={({ field }) => (
-          <TextField {...field} helperText="Nickname" label="nickname" />
+          <TextField
+            {...field}
+            helperText={errors.nickname?.message}
+            label="nickname"
+            error={!!errors.nickname}
+          />
+        )}
+      />
+      <Controller
+        name="email"
+        control={control}
+        render={({ field }) => (
+          <TextField
+            {...field}
+            label="e-mail"
+            helperText={errors.email?.message}
+            error={!!errors.email}
+          />
         )}
       />
       <Controller
         name="note"
         control={control}
-        rules={{ required: true }}
         render={({ field }) => <Rating {...field} />}
       />
       <Controller
         name="feedback"
         control={control}
-        rules={{ required: true }}
         render={({ field }) => (
           <TextField
             {...field}
-            helperText="Your Feedback"
-            label="feedback"
+            helperText={errors.feedback?.message}
+            label="Deixe seu feedback"
+            error={!!errors.feedback}
             multiline
             fullWidth
-            minRows={6}
+            minRows={4}
           />
         )}
       />
