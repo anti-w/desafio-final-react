@@ -1,15 +1,9 @@
 import { useState } from "react";
 
-import {
-  ContainerWithBackground,
-  GridFourCols,
-  AnimesList,
-  CustomAppBar,
-} from "../../components";
+import { AnimesList } from "../../components";
 
 import { useFetch } from "../../hooks/useFetch";
-
-import "../../index.css";
+import { FlexThreeElements } from "../../layouts";
 
 const Animes = () => {
   const [animesSearch, setAnimesSearch] = useState([{}]);
@@ -24,14 +18,9 @@ const Animes = () => {
   );
 
   return (
-    <>
-      <ContainerWithBackground>
-        <CustomAppBar />
-        <GridFourCols>
-          <AnimesList animes={fetchedData} isLoading={isLoading} />
-        </GridFourCols>
-      </ContainerWithBackground>
-    </>
+    <FlexThreeElements>
+      <AnimesList animes={fetchedData} isLoading={isLoading} />
+    </FlexThreeElements>
   );
 };
 
