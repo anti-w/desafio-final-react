@@ -10,8 +10,8 @@ import {
 } from "@mui/material";
 
 import Image from "mui-image";
-import uzumaki from "../../images/uzumaki.png";
-import uchiha from "../../images/uchiha.png";
+import uzumaki from "../../../../images/uzumaki.png";
+
 import { Form } from "./Form";
 
 const FeedbackDialog = () => {
@@ -40,6 +40,7 @@ const FeedbackDialog = () => {
           width="4.2rem"
           height="4.2rem"
           p="0.2rem"
+          zIndex={999}
           sx={{
             cursor: "pointer",
             opacity: 0.4,
@@ -58,7 +59,7 @@ const FeedbackDialog = () => {
         <DialogTitle textAlign="center" fontWeight="bold">
           Nos ajude a melhorar
         </DialogTitle>
-        <DialogContent sx={{ backgroundImage: uchiha }}>
+        <DialogContent>
           <Form />
         </DialogContent>
       </Dialog>

@@ -1,1 +1,1 @@
-export { default as FlexThreeElements } from "./FlexThreeElements";
+export { FlexThreeElements } from "./FlexThreeElements";

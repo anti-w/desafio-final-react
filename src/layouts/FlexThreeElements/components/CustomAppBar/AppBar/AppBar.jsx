@@ -11,8 +11,7 @@ import {
   Container,
 } from "@mui/material";
 
-import { Logo, ToggleDarkModeButton } from "../..";
-import { Nav } from "../";
+import { Logo, Nav, ToggleDarkModeButton } from "../";
 
 const AppBar = () => {
   const [anchorElNav, setAnchorElNav] = useState(null);

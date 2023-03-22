@@ -1,8 +1,7 @@
 import { Container } from "@mui/material";
 
-import { CustomAppBar, FeedbackDialog, Footer } from "../components";
-
-import { styles } from "./styles";
+import { styles } from "../styles";
+import { CustomAppBar, FeedbackDialog, Footer } from "./components";
 
 const FlexThreeElements = ({ children }) => {
   return (
