@@ -24,11 +24,14 @@ const Animes = () => {
           <AnimeCard
             key={anime.mal_id}
             cover={anime.images?.webp.image_url}
+            rank={anime.rank}
             favorites={anime.favorites}
             score={anime.score}
             title={anime.title_english || anime.title}
             url={anime.url}
             genres={anime.genres}
+            episodes={anime.episodes}
+            id={anime.mal_id}
           />
         ))}
       </Box>
