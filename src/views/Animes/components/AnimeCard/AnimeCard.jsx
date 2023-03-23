@@ -6,9 +6,9 @@ import {
   CardMedia,
   Typography,
   useTheme,
-  Icon,
 } from "@mui/material";
 import { Heart } from "@phosphor-icons/react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const AnimeCard = ({
@@ -19,24 +19,35 @@ const AnimeCard = ({
   cover,
   url,
   episodes,
-  rank,
   id,
 }) => {
+  const [showLinks, setShowLinks] = useState(false);
+
   const theme = useTheme();
+
+  const handleShowLinks = () => setShowLinks(!showLinks);
 
   return (
     <Card
       sx={{
         display: "flex",
-        alignItems: "start",
+        alignItems: "center",
         justifyContent: "space-between",
         padding: 1,
+        maxWidth: 400,
         m: 4,
         borderRadius: 4,
         backgroundColor: theme.palette.primary.main,
+        fontWeight: 900,
       }}
     >
-      <CardContent sx={{}}>
+      <CardContent
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          gap: 3,
+        }}
+      >
         <Typography color="text.primary" component="h2" fontWeight={900}>
           {title}
         </Typography>
@@ -56,15 +67,16 @@ const AnimeCard = ({
             <Box
               bgcolor={theme.palette.text.primary}
               color={theme.palette.primary.main}
-              p={0.1}
+              p={0.3}
+              borderRadius={3}
             >
-              <Typography>{genre.name}</Typography>
+              <Typography fontWeight={900} fontSize={14}>
+                {genre.name}
+              </Typography>
             </Box>
           ))}
         </Box>
-        <Box>
-          <Icon>{rank}</Icon>
-        </Box>
+
         <Box sx={{ display: "flex", justifyContent: "space-between" }}>
           <Typography>{score}</Typography>
           <Box>
@@ -82,9 +94,10 @@ const AnimeCard = ({
             width: 120,
           }}
         />
-        <Box display="none">
+        <Box display="flex" sx={{}}>
           <Link to={url} target="_blank">
             <InsertLink />
+            {showLinks}
           </Link>
           <Box>
             <Link to={`/${id}/characters`}>
