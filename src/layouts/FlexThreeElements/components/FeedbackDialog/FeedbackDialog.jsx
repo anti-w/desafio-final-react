@@ -7,6 +7,7 @@ import {
   DialogContent,
   DialogTitle,
   useTheme,
+  Typography,
 } from "@mui/material";
 
 import Image from "mui-image";
@@ -56,10 +57,23 @@ const FeedbackDialog = () => {
         </Box>
       </Tooltip>
       <Dialog open={open} onClose={handleClose}>
-        <DialogTitle textAlign="center" fontWeight="bold">
-          Nos ajude a melhorar
+        <DialogTitle m={1}>
+          <Typography textAlign="center" fontWeight={900} fontSize={18}>
+            Nos ajude a melhorar nosso site!
+          </Typography>
+          <Typography textAlign="center">
+            (Seu feedback é importante)
+          </Typography>
         </DialogTitle>
-        <DialogContent>
+
+        <DialogContent
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            position: "relative",
+            alignItems: "center",
+          }}
+        >
           <Form />
         </DialogContent>
       </Dialog>
