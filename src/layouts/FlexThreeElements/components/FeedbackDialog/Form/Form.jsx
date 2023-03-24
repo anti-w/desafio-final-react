@@ -1,4 +1,4 @@
-import { Box, Rating, TextField } from "@mui/material";
+import { Box, Button, Rating, TextField, Typography } from "@mui/material";
 
 import { Controller, useForm } from "react-hook-form";
 
@@ -33,8 +33,9 @@ const Form = () => {
         flexDirection="column"
         zIndex={999}
         sx={{
-          width: { xs: 240, sm: 360, md: 420, lg: 500 },
-          gap: { xs: 0.5 },
+          width: { xs: 260, sm: 360, md: 420, lg: 500 },
+          gap: { xs: 0.1, sm: 1 },
+          mx: { xs: 0, sm: 3 },
         }}
         onSubmit={handleSubmit(onSubmit)}
       >
@@ -69,7 +70,12 @@ const Form = () => {
         <Controller
           name="note"
           control={control}
-          render={({ field }) => <Rating {...field} sx={{ my: 1 }} />}
+          render={({ field }) => (
+            <Box>
+              <Typography>Quantas estrelas você acha que vale?</Typography>
+              <Rating {...field} sx={{ my: 1 }} />
+            </Box>
+          )}
         />
         <Controller
           name="feedback"
@@ -88,7 +94,22 @@ const Form = () => {
           )}
         />
 
-        <input type="submit" />
+        <Button
+          variant="contained"
+          size="small"
+          type="submit"
+          disableElevation
+          sx={{
+            m: 1,
+            p: 1,
+            fontWeight: 900,
+            fontSize: 14,
+            backgroundColor: "transparent",
+            border: "1px solid gray",
+          }}
+        >
+          Enviar
+        </Button>
       </Box>
       <Image
         position="absolute"
