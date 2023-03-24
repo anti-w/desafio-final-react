@@ -1,4 +1,4 @@
-import { Groups2, InsertLink } from "@mui/icons-material";
+import { Favorite, Groups2, InsertLink } from "@mui/icons-material";
 import {
   Card,
   Box,
@@ -6,8 +6,9 @@ import {
   CardMedia,
   Typography,
   useTheme,
+  Tooltip,
 } from "@mui/material";
-import { Heart } from "@phosphor-icons/react";
+import { Heart, Star } from "@phosphor-icons/react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -25,16 +26,16 @@ const AnimeCard = ({
 
   const theme = useTheme();
 
-  const handleShowLinks = () => setShowLinks(!showLinks);
-
   return (
     <Card
+      key={id}
       sx={{
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
         padding: 1,
         maxWidth: 400,
+        height: 240,
         m: 4,
         borderRadius: 4,
         backgroundColor: theme.palette.primary.main,
@@ -45,30 +46,41 @@ const AnimeCard = ({
         sx={{
           display: "flex",
           flexDirection: "column",
-          gap: 3,
+          justifyContent: "space-between",
+          gap: 1,
         }}
       >
-        <Typography color="text.primary" component="h2" fontWeight={900}>
-          {title}
-        </Typography>
-        <Typography color="text.primary" component="h2" fontWeight={900}>
-          {episodes > 1
-            ? `${episodes || "??"} episódios`
-            : `${episodes || "??"} episódio`}
-        </Typography>
+        <Box display="flex" flexDirection="column">
+          <Typography
+            color="text.primary"
+            component="h2"
+            fontSize={20}
+            fontWeight={900}
+          >
+            {title}
+          </Typography>
+          <Typography color="text.primary" component="h2">
+            {episodes > 1
+              ? `${episodes || "??"} episódios`
+              : `${episodes || "??"} episódio`}
+          </Typography>
+        </Box>
         <Box
           sx={{
             display: "flex",
             flexWrap: "wrap",
+            minWidth: 200,
             gap: 1,
           }}
         >
-          {genres.map((genre) => (
+          {genres.map((genre, i) => (
             <Box
+              display="flex"
+              key={genre.name + i}
               bgcolor={theme.palette.text.primary}
               color={theme.palette.primary.main}
-              p={0.3}
-              borderRadius={3}
+              p={0.5}
+              borderRadius={1}
             >
               <Typography fontWeight={900} fontSize={14}>
                 {genre.name}
@@ -77,24 +89,50 @@ const AnimeCard = ({
           ))}
         </Box>
 
-        <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-          <Typography>{score}</Typography>
-          <Box>
-            <Heart />
-            {favorites}
-          </Box>
+        <Box
+          mt={1}
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          <Tooltip title="score">
+            <Box
+              display="flex"
+              justifyContent="center"
+              alignItems="center"
+              gap={1}
+            >
+              <Star size={24} weight="fill" />
+              <Typography component="span">{score}</Typography>
+            </Box>
+          </Tooltip>
+
+          <Tooltip title="favorites">
+            <Box
+              display="flex"
+              justifyContent="center"
+              alignItems="center"
+              gap={1}
+            >
+              <Heart size={24} weight="fill" color="#f51000" />
+              <Typography component="span">{favorites}</Typography>
+            </Box>
+          </Tooltip>
         </Box>
       </CardContent>
-      <Box display="flex" flexDirection="column">
+      <Box display="flex" flexDirection="column" p={1}>
         <CardMedia
           component="img"
           image={cover}
           sx={{
             borderRadius: 2,
-            width: 120,
+            height: 170,
+            width: 130,
           }}
         />
-        <Box display="flex" sx={{}}>
+        <Box display="none" sx={{}}>
           <Link to={url} target="_blank">
             <InsertLink />
             {showLinks}

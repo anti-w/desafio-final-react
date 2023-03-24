@@ -23,7 +23,13 @@ const Animes = () => {
         searchForAnimeName={setAnimesSearch}
         searchedAnime={animesSearch}
       />
-      <Box>
+      <Box
+        key="teste"
+        display="flex"
+        flexWrap="wrap"
+        alignItems="center"
+        justifyContent="center"
+      >
         {fetchedData?.map((anime) => (
           <AnimeCard
             key={anime.mal_id}
