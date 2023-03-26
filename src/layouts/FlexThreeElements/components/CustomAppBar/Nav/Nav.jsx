@@ -20,6 +20,7 @@ const pages = [
 const stylesMobile = {
   display: { xs: "flex", md: "none" },
   justifyContent: "space-between",
+  alignItems: "center",
   padding: "1rem",
   flexWrap: "wrap",
   flexDirection: "column",
@@ -29,12 +30,20 @@ const stylesWeb = {
   display: { xs: "none", md: "flex" },
   justifyContent: "space-between",
   padding: "1rem",
+  alignItems: "center",
 };
 
 const Nav = ({ onMobile = false, handleCloseNavMenu = () => {} }) => {
   if (onMobile) {
     return pages.map(({ path, label }, i) => (
-      <MenuItem onClick={handleCloseNavMenu} key={i}>
+      <MenuItem
+        onClick={handleCloseNavMenu}
+        key={i}
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
         <NavLinks path={path} label={label} />
       </MenuItem>
     ));

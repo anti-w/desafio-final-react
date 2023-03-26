@@ -5,11 +5,14 @@ const SearchBar = ({ searchForAnimeName, searchedAnime }) => {
     <TextField
       sx={{
         width: { xs: 360, md: 500 },
+        backgroundColor: "transparent",
+        mb: -3,
+        justifySelf: "start",
       }}
       type="search"
       onBlur={() => {}}
       value={searchedAnime}
-      placeholder="Digite o nome..."
+      placeholder="Pesquise o nome de um anime..."
       onChange={(e) => searchForAnimeName(e.target.value)}
     />
   );

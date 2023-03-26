@@ -1,18 +1,22 @@
-import { Container } from "@mui/material";
+import { Container, Typography } from "@mui/material";
+import { FinnTheHuman } from "@phosphor-icons/react";
 
 const Footer = () => {
   return (
     <Container
+      disableGutters
       maxWidth={false}
       sx={{
         display: "flex",
-        justifyContent: "space-between",
+        justifyContent: "center",
+        gap: 3,
         alignItems: "center",
       }}
     >
-      <h1>elemento 1</h1>
-      <h1>elemento 2</h1>
-      <h1>elemento 3</h1>
+      <Typography textAlign="center" variant="h6" fontWeight={900}>
+        Desenvolvido por Wendel Demétrio
+      </Typography>
+      <FinnTheHuman size={32} weight="fill" />
     </Container>
   );
 };

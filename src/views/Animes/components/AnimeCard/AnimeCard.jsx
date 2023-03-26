@@ -36,7 +36,7 @@ const AnimeCard = ({
         padding: 1,
         maxWidth: 400,
         height: 240,
-        m: 4,
+        my: 2,
         borderRadius: 4,
         backgroundColor: theme.palette.primary.main,
         fontWeight: 900,

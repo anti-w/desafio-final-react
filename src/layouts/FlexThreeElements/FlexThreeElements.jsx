@@ -5,7 +5,7 @@ import { CustomAppBar, FeedbackDialog, Footer } from "./components";
 
 const FlexThreeElements = ({ children }) => {
   return (
-    <Container maxWidth={false} sx={styles}>
+    <Container maxWidth={false} sx={styles} disableGutters>
       <CustomAppBar />
       <FeedbackDialog />
       {children}

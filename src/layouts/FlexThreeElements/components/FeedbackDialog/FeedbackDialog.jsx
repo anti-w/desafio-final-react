@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import {
   Box,
@@ -6,8 +6,8 @@ import {
   Dialog,
   DialogContent,
   DialogTitle,
-  useTheme,
   Typography,
+  Rating,
 } from "@mui/material";
 
 import Image from "mui-image";
@@ -17,8 +17,7 @@ import { Form } from "./Form";
 
 const FeedbackDialog = () => {
   const [open, setOpen] = useState(false);
-
-  const theme = useTheme();
+  const [note, setNote] = useState(0);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -28,13 +27,26 @@ const FeedbackDialog = () => {
     setOpen(false);
   };
 
+  useEffect(() => {
+    let note = sessionStorage.getItem("note");
+    setNote(note);
+  }, []);
+
   return (
     <div>
-      <Tooltip title="Deixe seu feedback!" enterDelay={300}>
+      <Tooltip
+        title={note ? `Obrigado pela nota ${note}` : "Deixe seu feedback!"}
+        enterDelay={300}
+      >
         <Box
           bgcolor="transparent"
           component="button"
           position="fixed"
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          gap={1}
+          flexDirection="column"
           right="42px"
           border="none"
           bottom="100px"
@@ -45,7 +57,6 @@ const FeedbackDialog = () => {
           sx={{
             cursor: "pointer",
             opacity: 0.4,
-
             ":hover": {
               opacity: 1,
               transition: "ease-in-out 0.5s",
@@ -54,6 +65,7 @@ const FeedbackDialog = () => {
           onClick={handleClickOpen}
         >
           <Image src={uzumaki} bgColor="transparent" fit="fill" />
+          <Rating value={note} readOnly />
         </Box>
       </Tooltip>
       <Dialog open={open} onClose={handleClose}>

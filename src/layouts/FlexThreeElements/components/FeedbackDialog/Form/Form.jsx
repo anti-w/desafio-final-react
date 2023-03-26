@@ -23,7 +23,16 @@ const Form = () => {
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = (data) => console.log(data);
+  let grade;
+
+  const onSubmit = (data) => {
+    console.log(data);
+    saveNoteOnSession(data.note);
+  };
+
+  const saveNoteOnSession = (note) => {
+    sessionStorage.setItem("note", note);
+  };
 
   return (
     <>
