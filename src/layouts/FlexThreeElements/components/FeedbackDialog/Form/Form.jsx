@@ -8,7 +8,7 @@ import { schema } from "./schema";
 import kakashi from "../../../../../images/kakashi-yo.png";
 import Image from "mui-image";
 
-const Form = () => {
+const Form = ({ handleClose }) => {
   const {
     handleSubmit,
     control,
@@ -23,11 +23,10 @@ const Form = () => {
     resolver: yupResolver(schema),
   });
 
-  let grade;
-
   const onSubmit = (data) => {
-    console.log(data);
     saveNoteOnSession(data.note);
+    if (!!errors) handleClose();
+    document.location.reload(true);
   };
 
   const saveNoteOnSession = (note) => {
@@ -82,7 +81,7 @@ const Form = () => {
           render={({ field }) => (
             <Box>
               <Typography>Quantas estrelas você acha que vale?</Typography>
-              <Rating {...field} sx={{ my: 1 }} />
+              <Rating {...field} sx={{ my: 1 }} defaultValue={0} />
             </Box>
           )}
         />
@@ -102,12 +101,10 @@ const Form = () => {
             />
           )}
         />
-
         <Button
           variant="contained"
           size="small"
           type="submit"
-          disableElevation
           sx={{
             m: 1,
             p: 1,

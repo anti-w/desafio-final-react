@@ -29,7 +29,7 @@ const FeedbackDialog = () => {
 
   useEffect(() => {
     let note = sessionStorage.getItem("note");
-    setNote(note);
+    setNote(parseInt(note));
   }, []);
 
   return (
@@ -86,7 +86,7 @@ const FeedbackDialog = () => {
             alignItems: "center",
           }}
         >
-          <Form />
+          <Form handleClose={handleClose} />
         </DialogContent>
       </Dialog>
     </div>

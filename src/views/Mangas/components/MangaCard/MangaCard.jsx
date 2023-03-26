@@ -10,7 +10,7 @@ import {
 import { Star } from "@phosphor-icons/react";
 import { Link } from "react-router-dom";
 
-const MangaCard = ({ title, genres = [], score, cover, url, id, path }) => {
+const MangaCard = ({ title, genres = [], score, cover, id, path }) => {
   const theme = useTheme();
 
   return (
@@ -22,7 +22,7 @@ const MangaCard = ({ title, genres = [], score, cover, url, id, path }) => {
           alignItems: "center",
           justifyContent: "space-between",
           padding: 1,
-          maxWidth: 400,
+          maxWidth: { xs: 360, sm: 400 },
           height: 240,
           my: 2,
           opacity: 0.7,

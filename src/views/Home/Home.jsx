@@ -11,7 +11,6 @@ const Home = () => {
       <Container
         sx={{
           backgroundImage: `url(${madara})`,
-          height: "100%",
           backgroundPosition: "left bottom",
           backgroundSize: "contain",
           backgroundRepeat: "no-repeat",

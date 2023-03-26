@@ -1,10 +1,10 @@
 import { useParams } from "react-router-dom";
-
-import { CharactersList } from "../../components";
+import { filterCharactersByRole } from "../../helpers";
 
 import { useFetch } from "../../hooks/useFetch";
 
 import { FlexThreeElements } from "../../layouts";
+import { Content } from "./content";
 
 const Characters = () => {
   let { id, type } = useParams();
@@ -15,9 +15,17 @@ const Characters = () => {
     `${typeCleaned}/${id}/characters`
   );
 
+  if (!isLoading) {
+    const { mainChars, supportChars } = filterCharactersByRole(fetchedData);
+  }
+
   return (
     <FlexThreeElements>
-      <CharactersList characters={fetchedData} isLoading={isLoading} />
+      {isLoading ? (
+        <h1>Carregando...</h1>
+      ) : (
+        <Content characters={fetchedData} />
+      )}
     </FlexThreeElements>
   );
 };

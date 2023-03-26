@@ -7,8 +7,9 @@ import {
   useTheme,
   Tooltip,
 } from "@mui/material";
+
 import { Heart, Star } from "@phosphor-icons/react";
-import { useState } from "react";
+
 import { Link } from "react-router-dom";
 
 const AnimeCard = ({
@@ -17,13 +18,10 @@ const AnimeCard = ({
   favorites,
   score,
   cover,
-  url,
   episodes,
   id,
   path,
 }) => {
-  const [showLinks, setShowLinks] = useState(false);
-
   const theme = useTheme();
 
   return (
@@ -35,10 +33,10 @@ const AnimeCard = ({
           alignItems: "center",
           justifyContent: "space-between",
           padding: 1,
-          maxWidth: 400,
+          maxWidth: { xs: 360, sm: 400 },
           height: 240,
           my: 2,
-          opacity: 0.7,
+          opacity: 0.85,
           borderRadius: 4,
           backgroundColor: theme.palette.primary.main,
           fontWeight: 900,
