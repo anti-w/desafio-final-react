@@ -1,5 +1,5 @@
 import { Routes as Switch, BrowserRouter, Route } from "react-router-dom";
-import { Animes, AnimeCharacters, Home, Mangas, ThisSeason } from "./views";
+import { Animes, Characters, Home, Mangas, ThisSeason } from "./views";
 
 const Routes = () => {
   return (
@@ -9,7 +9,7 @@ const Routes = () => {
         <Route path="/animes" element={<Animes />} />
         <Route path="/mangas" element={<Mangas />} />
         <Route path="/season" element={<ThisSeason />} />
-        <Route path="/:id/characters" element={<AnimeCharacters />} />
+        <Route path="/:type/:id/characters" element={<Characters />} />
       </Switch>
     </BrowserRouter>
   );

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 import { useFetch } from "../../hooks/useFetch";
 
 import { FlexThreeElements } from "../../layouts";
@@ -7,6 +8,7 @@ import { Content } from "./content";
 
 const Animes = () => {
   const [animesSearch, setAnimesSearch] = useState("");
+  const { pathname } = useLocation();
 
   const { fetchedData, isLoading } = useFetch(
     "/anime",
@@ -26,11 +28,7 @@ const Animes = () => {
       {isLoading ? (
         <h1 style={{ height: "100%" }}>Carregando...</h1>
       ) : (
-        <Content
-          fetchedData={fetchedData}
-          animesSearch={animesSearch}
-          setAnimesSearch={setAnimesSearch}
-        />
+        <Content path={pathname} fetchedData={fetchedData} />
       )}
     </FlexThreeElements>
   );

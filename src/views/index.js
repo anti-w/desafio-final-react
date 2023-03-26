@@ -1,4 +1,4 @@
-export { AnimeCharacters } from "./AnimeCharacters";
+export { Characters } from "./Characters";
 export { Animes } from "./Animes";
 export { Home } from "./Home";
 export { Mangas } from "./Mangas";

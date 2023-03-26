@@ -109,7 +109,7 @@ const Content = () => {
           gap={1}
         >
           <Typography variant="h5" fontWeight="bold">
-            Essa temporada
+            Temporada
           </Typography>
           <Typography variant="h6">
             Acompanhe os lançamentos da temporada atual em uma tabela.

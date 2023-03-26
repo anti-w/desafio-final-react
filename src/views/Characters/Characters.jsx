@@ -6,10 +6,14 @@ import { useFetch } from "../../hooks/useFetch";
 
 import { FlexThreeElements } from "../../layouts";
 
-const AnimeCharacters = () => {
-  let { id } = useParams();
+const Characters = () => {
+  let { id, type } = useParams();
 
-  const { fetchedData, isLoading } = useFetch(`anime/${id}/characters`);
+  let typeCleaned = type.replace("s", "");
+
+  const { fetchedData, isLoading } = useFetch(
+    `${typeCleaned}/${id}/characters`
+  );
 
   return (
     <FlexThreeElements>
@@ -18,4 +22,4 @@ const AnimeCharacters = () => {
   );
 };
 
-export default AnimeCharacters;
+export default Characters;

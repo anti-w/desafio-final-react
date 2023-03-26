@@ -7,23 +7,10 @@ import {
   useTheme,
   Tooltip,
 } from "@mui/material";
-import { Heart, Star } from "@phosphor-icons/react";
-import { useState } from "react";
+import { Star } from "@phosphor-icons/react";
 import { Link } from "react-router-dom";
 
-const AnimeCard = ({
-  title,
-  genres = [],
-  favorites,
-  score,
-  cover,
-  url,
-  episodes,
-  id,
-  path,
-}) => {
-  const [showLinks, setShowLinks] = useState(false);
-
+const MangaCard = ({ title, genres = [], score, cover, url, id, path }) => {
   const theme = useTheme();
 
   return (
@@ -64,11 +51,6 @@ const AnimeCard = ({
               fontWeight={900}
             >
               {title}
-            </Typography>
-            <Typography color="text.primary" component="h2">
-              {episodes > 1
-                ? `${episodes || "??"} episódios`
-                : `${episodes || "??"} episódio`}
             </Typography>
           </Box>
           <Box
@@ -114,18 +96,6 @@ const AnimeCard = ({
                 <Typography component="span">{score}</Typography>
               </Box>
             </Tooltip>
-
-            <Tooltip title="favorites">
-              <Box
-                display="flex"
-                justifyContent="center"
-                alignItems="center"
-                gap={1}
-              >
-                <Heart size={24} weight="fill" color="#f51000" />
-                <Typography component="span">{favorites}</Typography>
-              </Box>
-            </Tooltip>
           </Box>
         </CardContent>
         <Tooltip title="Ver Personagens">
@@ -146,4 +116,4 @@ const AnimeCard = ({
   );
 };
 
-export default AnimeCard;
+export default MangaCard;

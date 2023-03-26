@@ -13,7 +13,7 @@ const pages = [
   },
   {
     path: "/season",
-    label: "Essa temporada",
+    label: "Temporada",
   },
 ];
 
@@ -31,6 +31,7 @@ const stylesWeb = {
   justifyContent: "space-between",
   padding: "1rem",
   alignItems: "center",
+  gap: 3,
 };
 
 const Nav = ({ onMobile = false, handleCloseNavMenu = () => {} }) => {

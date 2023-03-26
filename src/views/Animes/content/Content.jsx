@@ -1,10 +1,10 @@
 import { Box } from "@mui/material";
 import { Container } from "@mui/material";
-import { AnimeCard, SearchBar } from "../components";
+import { AnimeCard } from "../components";
 
 import obito from "../../../images/obito.png";
 
-const Content = ({ fetchedData }) => {
+const Content = ({ fetchedData, path }) => {
   return (
     <Container
       sx={{
@@ -13,7 +13,6 @@ const Content = ({ fetchedData }) => {
         backgroundPosition: "left top",
         backgroundRepeat: "no-repeat",
         overflowY: "scroll",
-        pt: 15,
       }}
       maxWidth={false}
     >
@@ -35,6 +34,7 @@ const Content = ({ fetchedData }) => {
             genres={anime.genres}
             episodes={anime.episodes}
             id={anime.mal_id}
+            path={path}
           />
         ))}
       </Box>
