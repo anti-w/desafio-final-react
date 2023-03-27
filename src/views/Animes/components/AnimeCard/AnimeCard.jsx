@@ -32,7 +32,7 @@ const AnimeCard = ({
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          padding: 1,
+          pr: 1,
           maxWidth: { xs: 360, sm: 400 },
           height: 240,
           my: 2,
@@ -127,7 +127,7 @@ const AnimeCard = ({
           </Box>
         </CardContent>
         <Tooltip title="Ver Personagens">
-          <Box display="flex" flexDirection="column" p={1}>
+          <Box display="flex" flexDirection="column">
             <CardMedia
               component="img"
               image={cover}
